@@ -1,0 +1,22 @@
+{
+  "appTitle": "Punjab Transit",
+  "driverAppTitle": "Driver Tracking",
+  "passengerAppTitle": "Live Bus Map",
+  "busId": "Bus ID",
+  "busIdHint": "e.g., PB-01-001",
+  "startTracking": "Start Tracking",
+  "stopTracking": "Stop Tracking",
+  "trackingActive": "Tracking active...",
+  "trackingStopped": "Tracking stopped",
+  "followBus": "Follow Bus",
+  "enterBusId": "Enter Bus ID to follow",
+  "language": "Language",
+  "punjabi": "ਪੰਜਾਬੀ",
+  "hindi": "हिन्दी",
+  "english": "English",
+  "permissionDenied": "Location permission denied",
+  "locationServiceDisabled": "Location service is disabled",
+  "connecting": "Connecting...",
+  "connected": "Connected",
+  "disconnected": "Disconnected"
+}

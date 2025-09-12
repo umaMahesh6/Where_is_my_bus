@@ -1,0 +1,22 @@
+{
+  "appTitle": "पंजाब ट्रांजिट",
+  "driverAppTitle": "ड्राइवर ट्रैकिंग",
+  "passengerAppTitle": "लाइव बस मैप",
+  "busId": "बस आईडी",
+  "busIdHint": "जैसे, PB-01-001",
+  "startTracking": "ट्रैकिंग शुरू करें",
+  "stopTracking": "ट्रैकिंग बंद करें",
+  "trackingActive": "ट्रैकिंग चल रही है...",
+  "trackingStopped": "ट्रैकिंग बंद है",
+  "followBus": "बस फॉलो करें",
+  "enterBusId": "फॉलो करने के लिए बस आईडी दर्ज करें",
+  "language": "भाषा",
+  "punjabi": "ਪੰਜਾਬੀ",
+  "hindi": "हिन्दी",
+  "english": "English",
+  "permissionDenied": "लोकेशन अनुमति नहीं मिली",
+  "locationServiceDisabled": "लोकेशन सेवा बंद है",
+  "connecting": "कनेक्ट हो रहा है...",
+  "connected": "कनेक्ट हो गया",
+  "disconnected": "डिसकनेक्ट हो गया"
+}

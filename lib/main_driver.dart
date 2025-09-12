@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import 'l10n/app_localizations.dart';
+import 'services/language_service.dart';
 import 'services/location_service.dart';
 import 'services/mqtt_service.dart';
 
@@ -20,6 +22,8 @@ class DriverApp extends StatelessWidget {
     return MaterialApp(
       title: 'Driver',
       theme: ThemeData(colorScheme: ColorScheme.fromSeed(seedColor: Colors.green)),
+      localizationsDelegates: AppLocalizations.localizationsDelegates,
+      supportedLocales: AppLocalizations.supportedLocales,
       home: const DriverHome(),
     );
   }
@@ -37,11 +41,20 @@ class _DriverHomeState extends State<DriverHome> {
   final MqttService _mqtt = MqttService(clientId: 'driver-${DateTime.now().millisecondsSinceEpoch}');
   StreamSubscription<Position>? _sub;
   bool _tracking = false;
+  String _currentLanguage = 'en';
 
   @override
   void initState() {
     super.initState();
     _loadBusId();
+    _loadLanguage();
+  }
+
+  Future<void> _loadLanguage() async {
+    final lang = await LanguageService.getCurrentLanguage();
+    setState(() {
+      _currentLanguage = lang;
+    });
   }
 
   Future<void> _loadBusId() async {
@@ -77,25 +90,47 @@ class _DriverHomeState extends State<DriverHome> {
     setState(() => _tracking = true);
   }
 
+  Future<void> _changeLanguage(String languageCode) async {
+    await LanguageService.setLanguage(languageCode);
+    setState(() {
+      _currentLanguage = languageCode;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
+    
     return Scaffold(
-      appBar: AppBar(title: const Text('Driver Tracking')),
+      appBar: AppBar(
+        title: Text(l10n.driverAppTitle),
+        actions: [
+          PopupMenuButton<String>(
+            onSelected: _changeLanguage,
+            itemBuilder: (context) => [
+              PopupMenuItem(value: 'en', child: Text(l10n.english)),
+              PopupMenuItem(value: 'pa', child: Text(l10n.punjabi)),
+              PopupMenuItem(value: 'hi', child: Text(l10n.hindi)),
+            ],
+            child: const Icon(Icons.language),
+          ),
+        ],
+      ),
       body: Padding(
         padding: const EdgeInsets.all(16),
         child: Column(
           children: [
             TextField(
               controller: _busIdController,
-              decoration: const InputDecoration(labelText: 'Bus ID (e.g., PB-01-001)'),
+              decoration: InputDecoration(labelText: '${l10n.busId} (${l10n.busIdHint})'),
             ),
             const SizedBox(height: 16),
             ElevatedButton(
               onPressed: _toggleTracking,
-              child: Text(_tracking ? 'Stop Tracking' : 'Start Tracking'),
+              child: Text(_tracking ? l10n.stopTracking : l10n.startTracking),
             ),
             const SizedBox(height: 16),
-            Text(_tracking ? 'Tracking active...' : 'Tracking stopped'),
+            Text(_tracking ? l10n.trackingActive : l10n.trackingStopped),
           ],
         ),
       ),

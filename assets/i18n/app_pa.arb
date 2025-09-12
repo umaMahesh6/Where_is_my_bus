@@ -1,0 +1,22 @@
+{
+  "appTitle": "ਪੰਜਾਬ ਟ੍ਰਾਂਜ਼ਿਟ",
+  "driverAppTitle": "ਡਰਾਈਵਰ ਟ੍ਰੈਕਿੰਗ",
+  "passengerAppTitle": "ਲਾਈਵ ਬੱਸ ਮੈਪ",
+  "busId": "ਬੱਸ ਆਈਡੀ",
+  "busIdHint": "ਜਿਵੇਂ, PB-01-001",
+  "startTracking": "ਟ੍ਰੈਕਿੰਗ ਸ਼ੁਰੂ ਕਰੋ",
+  "stopTracking": "ਟ੍ਰੈਕਿੰਗ ਬੰਦ ਕਰੋ",
+  "trackingActive": "ਟ੍ਰੈਕਿੰਗ ਚਲ ਰਹੀ ਹੈ...",
+  "trackingStopped": "ਟ੍ਰੈਕਿੰਗ ਬੰਦ ਹੈ",
+  "followBus": "ਬੱਸ ਫੌਲੋ ਕਰੋ",
+  "enterBusId": "ਫੌਲੋ ਕਰਨ ਲਈ ਬੱਸ ਆਈਡੀ ਦਰਜ ਕਰੋ",
+  "language": "ਭਾਸ਼ਾ",
+  "punjabi": "ਪੰਜਾਬੀ",
+  "hindi": "हिन्दी",
+  "english": "English",
+  "permissionDenied": "ਲੋਕੇਸ਼ਨ ਇਜਾਜ਼ਤ ਨਹੀਂ ਮਿਲੀ",
+  "locationServiceDisabled": "ਲੋਕੇਸ਼ਨ ਸਰਵਿਸ ਬੰਦ ਹੈ",
+  "connecting": "ਕਨੈਕਟ ਹੋ ਰਿਹਾ ਹੈ...",
+  "connected": "ਕਨੈਕਟ ਹੋ ਗਿਆ",
+  "disconnected": "ਡਿਸਕਨੈਕਟ ਹੋ ਗਿਆ"
+}

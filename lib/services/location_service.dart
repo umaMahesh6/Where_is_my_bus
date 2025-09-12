@@ -4,7 +4,7 @@ import 'package:geolocator/geolocator.dart';
 
 class LocationService {
   static Future<bool> ensurePermissions() async {
-    bool serviceEnabled = await Geolocator.isLocationServiceEnabled();
+    final bool serviceEnabled = await Geolocator.isLocationServiceEnabled();
     if (!serviceEnabled) {
       return false;
     }
@@ -23,7 +23,7 @@ class LocationService {
 
   static Stream<Position> getPositionStream({int seconds = 5}) {
     return Geolocator.getPositionStream(
-      locationSettings: LocationSettings(
+      locationSettings: const LocationSettings(
         accuracy: LocationAccuracy.high,
         distanceFilter: 5,
         timeLimit: null,
@@ -33,7 +33,9 @@ class LocationService {
 
   static Future<Position> getCurrentPosition() {
     return Geolocator.getCurrentPosition(
-      desiredAccuracy: LocationAccuracy.high,
+      locationSettings: const LocationSettings(
+        accuracy: LocationAccuracy.high,
+      ),
     );
   }
 }
